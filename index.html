@@ -291,6 +291,12 @@ body.lead-submitted #thanks{ display:flex; }
 .video-poster:hover .play-btn{ transform:scale(1.08); }
 .play-btn svg{ width:30px; height:30px; fill:#fff; margin-left:4px; }
 .is-playing .video-poster{ opacity:0; pointer-events:none; }
+.video-shell iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+.video-row{ display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-top:1.2rem; }
+.video-item{ margin:0; }
+.video-item .video-shell{ aspect-ratio:16/9; }
+.video-cap{ margin:.75rem 0 0; font-size:.82rem; color:var(--mist-dim); text-align:center; letter-spacing:.01em; }
+@media (max-width:760px){ .video-row{ grid-template-columns:1fr; } }
 
 /* ---------- Card grids (treatments / funding / journey) ---------- */
 .cards{ display:grid; gap:1.2rem; margin-top:2rem; }
@@ -574,12 +580,40 @@ body.lead-submitted #thanks{ display:flex; }
       <h2 class="title reveal d1">See the transformations</h2>
       <p class="lede reveal d2">A short introduction to our approach, the All-on-4 procedure, and what to expect at your consultation.</p>
 
+      <!-- Featured: practice introduction (self-hosted). The poster is a placeholder (clinic interior);
+           swap practice.webp for an exported frame from the intro video if you prefer a true still. -->
       <div class="glass video-wrap reveal d2" id="videoWrap">
         <div class="video-shell">
-          <video id="introVideo" preload="metadata" playsinline controls>
+          <video id="introVideo" preload="none" playsinline controls poster="practice.webp">
             <source src="https://wollongongimplantinstitute.com.au/wp-content/uploads/2026/06/HXUJ7555.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
+          <div class="video-poster" style="background-image:url('practice.webp')" role="button" tabindex="0" aria-label="Play the practice introduction video">
+            <span class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+          </div>
+        </div>
+
+        <!-- Two additional patient videos hosted on Vimeo. Each poster uses Vimeo's own thumbnail,
+             so the tile never shows a black frame before play. The player only loads when clicked.
+             Note: these videos are unlisted, so the h= hash in each URL is required. If a video is
+             domain-restricted in Vimeo, add this site's domain under the video's Privacy > Embed settings. -->
+        <div class="video-row">
+          <figure class="video-item">
+            <div class="video-shell" data-vimeo="https://player.vimeo.com/video/1206371270?h=57fdab103f&amp;title=0&amp;byline=0&amp;portrait=0&amp;dnt=1">
+              <div class="video-poster" style="background-image:url('https://i.vimeocdn.com/video/2175196843-0b47eedfb77c7af04928c64fcd795d90a87057f986c33d806c408b2175a5e0a2-d?f=webp&amp;region=us')" role="button" tabindex="0" aria-label="Play patient video one">
+                <span class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+              </div>
+            </div>
+            <figcaption class="video-cap">A patient shares their experience</figcaption>
+          </figure>
+          <figure class="video-item">
+            <div class="video-shell" data-vimeo="https://player.vimeo.com/video/1206370333?h=0e2f9b5cfa&amp;title=0&amp;byline=0&amp;portrait=0&amp;dnt=1">
+              <div class="video-poster" style="background-image:url('https://i.vimeocdn.com/video/2175195561-267bf87f9faa39051d715338edeee824198cb41b53f4fd5f908cac5f99bde7ec-d?f=webp&amp;region=us')" role="button" tabindex="0" aria-label="Play patient video two">
+                <span class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+              </div>
+            </div>
+            <figcaption class="video-cap">Another patient's experience</figcaption>
+          </figure>
         </div>
       </div>
     </div>
@@ -956,13 +990,37 @@ function wireForm(form){
 buildForm(document.getElementById("heroFormMount"), "h");
 buildForm(document.getElementById("bookFormMount"), "b");
 
-/* ---------- Transformation video: preview first frame, cap playback at 1:31 ---------- */
+/* ---------- Transformation videos: click-to-play facades (self-hosted + Vimeo) ---------- */
 (function(){
-  const video = document.getElementById("introVideo");
-  if(!video) return;
-  const END = 91; // 1:31
-  video.addEventListener("timeupdate", ()=>{ if(video.currentTime >= END) video.pause(); });
-  video.addEventListener("play", ()=>{ if(video.currentTime >= END - 0.1) video.currentTime = 0; });
+  document.querySelectorAll(".video-shell .video-poster").forEach(poster=>{
+    const shell = poster.closest(".video-shell");
+    const play = ()=>{
+      if(shell.classList.contains("is-playing")) return;
+      const vimeo = shell.getAttribute("data-vimeo");
+      if(vimeo){
+        const f = document.createElement("iframe");
+        f.src = vimeo + (vimeo.indexOf("?")>-1 ? "&" : "?") + "autoplay=1";
+        f.allow = "autoplay; fullscreen; picture-in-picture; encrypted-media";
+        f.setAttribute("allowfullscreen","");
+        f.setAttribute("title", poster.getAttribute("aria-label") || "Video");
+        shell.appendChild(f);
+      } else {
+        const v = shell.querySelector("video");
+        if(v){ v.play().catch(()=>{}); }
+      }
+      shell.classList.add("is-playing");
+    };
+    poster.addEventListener("click", play);
+    poster.addEventListener("keydown", e=>{ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); play(); } });
+  });
+
+  // Cap the self-hosted practice intro video at 1:31.
+  const intro = document.getElementById("introVideo");
+  if(intro){
+    const END = 91; // 1:31
+    intro.addEventListener("timeupdate", ()=>{ if(intro.currentTime >= END) intro.pause(); });
+    intro.addEventListener("play", ()=>{ if(intro.currentTime >= END - 0.1) intro.currentTime = 0; });
+  }
 })();
 
 /* ---------- FAQ accordion ---------- */
