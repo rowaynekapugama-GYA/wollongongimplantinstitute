@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="robots" content="noindex, follow">
-<title>New Teeth in as Little as 48 Hours — Wollongong Implant Institute</title>
+<title>New Teeth in as Little as 48 Hours | Wollongong Implant Institute</title>
 <meta name="description" content="Full-arch dental implants and All-on-4 in Wollongong with Dr Ahmed Bedeir. Payment plans and early release of super available for eligible patients. Book your free, no-obligation consultation.">
 <link rel="icon" href="https://wollongongimplantinstitute.com.au/wp-content/uploads/2022/07/cropped-cropped-favicon-270x270.png">
 
@@ -15,7 +15,7 @@
 
 <style>
 /* =========================================================================
-   WOLLONGONG IMPLANT INSTITUTE — Liquid Glass Landing Page
+   WOLLONGONG IMPLANT INSTITUTE | Liquid Glass Landing Page
    Single file. Desktop = vertical scroll. Mobile = horizontal swipe deck.
    ========================================================================= */
 
@@ -388,6 +388,7 @@ body.lead-submitted #thanks{ display:flex; }
 
 /* ============================ MOBILE ============================ */
 @media (max-width:880px){
+  :root{ --bar-h:84px; }   /* the brand wraps on phones, so reserve enough header height to clear the hero copy */
   body{ height:100svh; overflow:hidden; }
   .hint-desktop{ display:none; } .hint-mobile{ display:inline; }
   .sidenav{ display:none; }
@@ -397,11 +398,16 @@ body.lead-submitted #thanks{ display:flex; }
     scrollbar-width:none; }
   .deck::-webkit-scrollbar{ display:none; }
 
-  .panel{ flex:0 0 100vw; width:100vw; height:100svh; min-height:0; overflow-y:auto; overscroll-behavior:contain;
-    scroll-snap-align:start; scroll-snap-stop:always; align-items:flex-start;
+  .panel{ flex:0 0 100vw; width:100vw; height:100svh; min-height:0; display:block; overflow-y:auto; overscroll-behavior:contain;
+    scroll-snap-align:start; scroll-snap-stop:always;
     padding:calc(var(--bar-h) + 18px) 22px calc(var(--dock-h) + 18px); -webkit-overflow-scrolling:touch; }
   .deck::-webkit-scrollbar, .panel::-webkit-scrollbar{ display:none; }
   .panel-inner{ min-height:min-content; }
+
+  /* compact the fixed header so the wrapped brand sits inside its reserved height */
+  .brand b{ font-size:.95rem; }
+  .brand span{ font-size:.58rem; letter-spacing:.13em; }
+  .topbar .btn{ padding:.62em 1.05em; font-size:.84rem; }
 
   /* stack all multi-column layouts */
   #hero .panel-inner, .media-grid, .dentist-grid, .book-grid{ grid-template-columns:1fr; gap:1.8rem; }
@@ -492,7 +498,7 @@ body.lead-submitted #thanks{ display:flex; }
         <p class="eyebrow reveal">Wollongong · Free Consultation</p>
         <h1 class="reveal d1">New Teeth in as
           <span class="pop"><em>Little as 48 Hours</em></span></h1>
-        <p class="hero-sub reveal d2">Restore your smile with full-arch dental implants — and enjoy added peace of mind with <b>2 years of complimentary maintenance</b> included.<sup>*</sup></p>
+        <p class="hero-sub reveal d2">Restore your smile with full-arch dental implants, and enjoy added peace of mind with <b>2 years of complimentary maintenance</b> included.<sup>*</sup></p>
 
         <div class="pay-chip glass reveal d2">
           <span class="ico" aria-hidden="true">
@@ -500,7 +506,7 @@ body.lead-submitted #thanks{ display:flex; }
           </span>
           <div>
             <b>Payment plans + early release of super available</b>
-            <p>Spread the cost of your treatment, or use your super to get started sooner — for eligible patients.</p>
+            <p>Spread the cost of your treatment, or use your super to get started sooner, for eligible patients.</p>
           </div>
         </div>
 
@@ -533,7 +539,7 @@ body.lead-submitted #thanks{ display:flex; }
       <div>
         <p class="eyebrow reveal">A solution that lasts</p>
         <h2 class="title reveal d1">Missing or damaged teeth change more than your smile</h2>
-        <p class="lede reveal d2">When teeth are missing or damaged, eating, speaking and smiling all become harder — and that takes a toll on your confidence. Unlike a removable denture, an implant replaces the root of the tooth, bonding with your jawbone to create a stable foundation for a fixed, natural-looking replacement.</p>
+        <p class="lede reveal d2">When teeth are missing or damaged, eating, speaking and smiling all become harder, and that takes a toll on your confidence. Unlike a removable denture, an implant replaces the root of the tooth, bonding with your jawbone to create a stable foundation for a fixed, natural-looking replacement.</p>
         <ul class="ticks reveal d3">
           <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Fixed in place, so you can eat and speak with confidence</li>
           <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Natural-looking replacement teeth</li>
@@ -542,7 +548,7 @@ body.lead-submitted #thanks{ display:flex; }
         </ul>
       </div>
       <div class="glass frame reveal d2">
-        <img src="why-implant.webp" alt="Before and after dental implant treatment — missing and damaged teeth replaced with a full, natural-looking smile." loading="lazy">
+        <img src="why-implant.webp" alt="Before and after dental implant treatment: missing and damaged teeth replaced with a full, natural-looking smile." loading="lazy">
         <span class="cap">A real result for one of our patients. Individual results may vary.</span>
       </div>
     </div>
@@ -553,7 +559,7 @@ body.lead-submitted #thanks{ display:flex; }
     <div class="panel-inner">
       <p class="eyebrow reveal">Real transformations</p>
       <h2 class="title reveal d1">Before &amp; after</h2>
-      <p class="lede reveal d2">See the difference a carefully planned treatment can make — these are real patients treated at our Wollongong practice.</p>
+      <p class="lede reveal d2">See the difference a carefully planned treatment can make. These are real patients treated at our Wollongong practice.</p>
 
       <div class="ba-gallery reveal d2">
         <figure class="ba-item glass"><span class="ba-tag ba-tag-before">Before</span><span class="ba-tag ba-tag-after">After</span><img src="before-after-1.webp" width="1610" height="462" loading="lazy" alt="Patient smile before and after dental implant treatment"></figure>
@@ -639,7 +645,7 @@ body.lead-submitted #thanks{ display:flex; }
         <div class="glass card">
           <span class="badge">All-on-4</span>
           <h3>All-on-4 full arch</h3>
-          <p>A full upper or lower set of fixed teeth supported by just four implants — a streamlined approach to replacing a whole arch.</p>
+          <p>A full upper or lower set of fixed teeth supported by just four implants, a streamlined approach to replacing a whole arch.</p>
           <ul class="ticks">
             <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>A full arch supported by four implants</li>
             <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Often suitable when bone density is reduced</li>
@@ -699,7 +705,7 @@ body.lead-submitted #thanks{ display:flex; }
         <p class="eyebrow">Your dentist</p>
         <h2 class="title" style="font-size:clamp(1.9rem,4vw,2.6rem)">Dr Ahmed Bedeir</h2>
         <p class="role">Founder &amp; experienced implant dentist, Dental Corner</p>
-        <p style="color:var(--mist); font-size:.96rem; margin:0;">Dr Bedeir has focused his career on implant dentistry, placing dental implants for more than 15 years and treating hundreds of cases. He completed a Masters in Implantology at Goethe University in Frankfurt — one of the most respected implant universities in the world — and has gone on to further study in full-arch rehabilitation. He is known for taking the time to understand each patient's needs and for explaining every option clearly before anything begins.</p>
+        <p style="color:var(--mist); font-size:.96rem; margin:0;">Dr Bedeir has focused his career on implant dentistry, placing dental implants for more than 15 years and treating hundreds of cases. He completed a Masters in Implantology at Goethe University in Frankfurt, one of the most respected implant universities in the world, and has gone on to further study in full-arch rehabilitation. He is known for taking the time to understand each patient's needs and for explaining every option clearly before anything begins.</p>
         <ul class="creds">
           <li>Masters in Implantology</li>
           <li>Member of the ICOI</li>
@@ -711,7 +717,7 @@ body.lead-submitted #thanks{ display:flex; }
         <h2 class="title" style="font-size:clamp(1.6rem,3.4vw,2.2rem); margin-bottom:1.4rem;">What to look for in an implant dentist</h2>
         <div class="mt">
           <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 3 2 6 2s6-1 6-2v-5"/></svg></span>
-          <div><b>Training</b><p>Implant dentistry should be a core focus, supported by formal study — not just a short course.</p></div>
+          <div><b>Training</b><p>Implant dentistry should be a core focus, supported by formal study, not just a short course.</p></div>
         </div>
         <div class="mt">
           <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg></span>
@@ -796,14 +802,14 @@ body.lead-submitted #thanks{ display:flex; }
         </div>
       </div>
 
-      <!-- AHPRA legal — shown inside this panel on mobile (footer is hidden there) -->
+      <!-- AHPRA legal, shown inside this panel on mobile (footer is hidden there) -->
       <div class="legal-mobile" style="margin-top:2.6rem; border-top:1px solid rgba(255,255,255,.08); padding-top:1.8rem;">
         <div style="margin-bottom:1.8rem;">
-          <p style="font-size:.85rem; color:var(--cloud); font-weight:600; margin:0 0 .3rem;">Visit us — Wollongong NSW 2500</p>
+          <p style="font-size:.85rem; color:var(--cloud); font-weight:600; margin:0 0 .3rem;">Visit us, Wollongong NSW 2500</p>
           <iframe class="map-embed" title="Map to Dental Corner, Wollongong" src="https://www.google.com/maps?q=Dental%20Corner%20Wollongong&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <p style="font-size:.72rem; color:var(--mist-dim); line-height:1.6;">For suitable patients only. Treatment timeframes vary depending on your individual clinical needs. Any surgical or invasive procedure carries risks. Before proceeding, you should seek a second opinion from an appropriately qualified health practitioner. Dental implant treatment requires a consultation to determine suitability, and individual results vary. Early release of superannuation is subject to eligibility criteria set by the relevant authorities and is not guaranteed; we recommend seeking independent financial advice. Payment plans are subject to provider terms and approval.</p>
-        <p style="font-size:.72rem; color:var(--mist); margin-top:.8rem;">Dr Ahmed Bedeir — Dental Practitioner. AHPRA registration: <span style="opacity:.8">DEN0001624296</span>.</p>
+        <p style="font-size:.72rem; color:var(--mist); margin-top:.8rem;">Dr Ahmed Bedeir, Dental Practitioner. AHPRA registration: <span style="opacity:.8">DEN0001624296</span>.</p>
         <p style="font-size:.72rem; color:var(--mist-dim); margin-top:1rem;">© Dental Corner. All rights reserved.</p>
       </div>
     </div>
@@ -822,7 +828,7 @@ body.lead-submitted #thanks{ display:flex; }
         <ol class="next-steps">
           <li><span class="num">1</span><span>Our team will give you a call to find a time that suits and answer any questions you have.</span></li>
           <li><span class="num">2</span><span>At your free 30-minute consultation we'll assess your suitability and explain your options clearly.</span></li>
-          <li><span class="num">3</span><span>You'll get a clear treatment plan — including payment plan and early-release-of-super options if you'd like them.</span></li>
+          <li><span class="num">3</span><span>You'll get a clear treatment plan, including payment plan and early-release-of-super options if you'd like them.</span></li>
         </ol>
       </div>
     </div>
@@ -848,7 +854,7 @@ body.lead-submitted #thanks{ display:flex; }
       <p>For suitable patients only. Treatment timeframes vary depending on your individual clinical needs.</p>
       <p>Any surgical or invasive procedure carries risks. Before proceeding, you should seek a second opinion from an appropriately qualified health practitioner. Dental implant treatment requires a consultation to determine suitability, and individual results vary.</p>
       <p>Early release of superannuation is subject to eligibility criteria set by the relevant authorities and is not guaranteed. We recommend seeking independent financial advice. Payment plans are subject to provider terms and approval.</p>
-      <p class="reg">Dr Ahmed Bedeir — Dental Practitioner. AHPRA registration: <span style="opacity:.8">DEN0001624296</span>.</p>
+      <p class="reg">Dr Ahmed Bedeir, Dental Practitioner. AHPRA registration: <span style="opacity:.8">DEN0001624296</span>.</p>
       <p class="copy">© Dental Corner, All rights reserved · Website Design by <a href="https://generateyouraudience.com/" target="_blank" rel="noopener">Generate Your Audience</a></p>
     </div>
   </div>
@@ -882,16 +888,16 @@ body.lead-submitted #thanks{ display:flex; }
 
 <script>
 /* =========================================================================
-   CONFIG — edit these to connect the form and add your real photos
+   CONFIG: edit these to connect the form and add your real photos
    ========================================================================= */
 const CONFIG = {
-  // Where to send leads. Set to "/api/lead" — the included serverless relay
+  // Where to send leads. Set to "/api/lead", the included serverless relay
   // (api/lead.js) lives on the SAME Vercel project/domain as this page, so a
   // same-origin path is all that's needed (no CORS to configure). That relay
   // emails your SmileSearch CRM intake address over SMTP/TLS, because a browser
   // cannot send SMTP email directly.
   // NOTE: submitting only works once deployed on Vercel. Opening this file
-  // straight off your computer will show an error on submit — that's expected.
+  // straight off your computer will show an error on submit, that's expected.
   FORM_ENDPOINT: "/api/lead"
 };
 
@@ -904,7 +910,7 @@ function buildForm(mount, prefix){
   mount.innerHTML =
     '<form class="lead-form" novalidate>'
     + '<div class="form-head"><h3 class="form-title">Book your free consultation</h3>'
-    + '<p class="form-sub">Enter your details and we\'ll call you back to arrange it — no obligation.</p></div>'
+    + '<p class="form-sub">Enter your details and we\'ll call you back to arrange it, no obligation.</p></div>'
     + '<div class="form-body">'
     + '<div class="field-row">'
     +   '<label class="field" data-field="firstName"><span class="field-label">First name <span class="req">*</span></span>'
@@ -938,7 +944,7 @@ function wireForm(form){
 
   form.addEventListener("submit", e=>{
     e.preventDefault();
-    // honeypot — silently drop bots
+    // honeypot: silently drop bots
     if(form.querySelector(".hp").value){ return; }
 
     let ok = true;
@@ -968,7 +974,7 @@ function wireForm(form){
       const succ = form.querySelector(".form-success");
       succ.hidden = false;
       succ.querySelector(".sx-msg").textContent =
-        "Thanks " + data.firstName + " — we'll be in touch shortly to arrange your free consultation.";
+        "Thanks " + data.firstName + ", we'll be in touch shortly to arrange your free consultation.";
       // …and move the visitor on to the dedicated thank-you section.
       leadSuccess(data);
     };
@@ -1170,7 +1176,7 @@ function refreshLayout(){
 mqMobile.addEventListener("change", ()=>{ deck.scrollTo({left:0}); window.scrollTo({top:0}); setTimeout(refreshLayout,50); });
 refreshLayout();
 
-/* hero background video — pause for visitors who prefer reduced motion */
+/* hero background video: pause for visitors who prefer reduced motion */
 (function(){
   const hv = document.querySelector(".hero-video");
   if(hv && reduceMotion){ hv.removeAttribute("autoplay"); try{ hv.pause(); }catch(e){} }
